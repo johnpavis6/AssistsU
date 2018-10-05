@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AssistsU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf_token" content="<%=csrf_token%>">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="icon" href="images/icon.png">
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container">
+            <span class="navbar-brand">
+                AssistsU
+            </span>
+        </div>
+    </nav>
+    <div class="container">
+        <% if(code){ %>
+        <div class="alert alert-warning">
+            <%=message%>
+        </div>
+        <% } %>
+        <h2>Choose News categories which you like to read</h2>
+        <form action="/mychoices" method="POST" id="categories">
+            <input type="hidden" name="_csrf" value="<%=csrf_token%>">
+            <div class="row">
+                <% for(var i=0;i<categories.length;i++){ %>
+                <div class="col-lg-3">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-info">
+                                <input type="checkbox" name="category" id="category-<%= categories[i].id %>" value="<%= categories[i].id %>">
+                            </div>
+                        </div>
+                        <button class="form-control bg-light" style="text-transform: capitalize;" disabled>
+                            <label for="category-<%= categories[i].id %>">
+                                <%= categories[i].category %></label>
+                        </button>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <input class="btn btn-outline-primary" type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>

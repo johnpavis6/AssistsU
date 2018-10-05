@@ -1,0 +1,33 @@
+{
+  "name": "assistsu",
+  "version": "1.0.0",
+  "description": "A live website that acts as an expense tracker and display the expenses graphically and displays live news based on the user’s choice (Machine learning approach).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnpavis6/AssistsU.git"
+  },
+  "author": "Sangameswaran A",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnpavis6/AssistsU/issues"
+  },
+  "homepage": "https://github.com/johnpavis6/AssistsU#readme",
+  "dependencies": {
+    "angular": "^1.7.4",
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^4.1.3",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "jquery": "^3.3.1",
+    "mysql": "^2.16.0",
+    "mysql-model": "0.0.3",
+    "xss": "^1.0.3"
+  }
+}
