@@ -19,5 +19,9 @@ app.get('/angular', function (req, res) {
     res.render('angular.ejs');
 })
 
-app.listen(8080);
-console.log('Listening on 8080');
+var port = 4000;
+app.listen(port, (err) => {
+    if (err) throw err;
+    console.log(`Listening on ${port}`);
+    console.log(`http://localhost:${port}`);
+});
