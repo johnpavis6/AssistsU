@@ -13,7 +13,7 @@ module.exports = {
     isUser: function (req, res, next) {
         var user = new User();
         user.find('first', { fields: ['id', 'password', 'status'], where: `email="${req.body.email}"`, }, function (err, row) {
-            if (row.id == undefined) {
+            if (row == undefined) {
                 res.render('user/home', { csrf_token: req.csrfToken(), message: "User Not Exist" });
                 return;
             }
@@ -34,7 +34,7 @@ module.exports = {
     createUser: function (req, res, next) {
         var user = new User();
         user.find('first', { fields: ['id'], where: `email="${req.body.email}"`, }, function (err, row) {
-            if (row.id) {
+            if (row['id']) {
                 res.send({ code: 1, message: "Email already exist" });
                 return;
             }
