@@ -19,7 +19,7 @@ app.get('/angular', function (req, res) {
     res.render('angular.ejs');
 })
 
-var port = 4000;
+var port = 80;
 app.listen(port, (err) => {
     if (err) throw err;
     console.log(`Listening on ${port}`);

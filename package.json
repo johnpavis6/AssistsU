@@ -4,7 +4,8 @@
   "description": "A live website that acts as an expense tracker and display the expenses graphically and displays live news based on the user’s choice (Machine learning approach).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ps -ef | grep nodemon",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
